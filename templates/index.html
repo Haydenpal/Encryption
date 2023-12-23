@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biometric Identification System</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            margin-top: 50px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input.form-control {
+            border-radius: 5px;
+            border-color: #ccc;
+        }
+
+        input.form-control:focus {
+            border-color: #007bff;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Biometric Identification System</h1>
+        <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="user_id">User ID:</label>
+                <input type="text" class="form-control" name="user_id" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="file">Biometric Data:</label>
+                <input type="file" class="form-control-file" name="file" required>
+            </div>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#uploadForm").submit(function() {
+                alert("Biometric data uploaded successfully!");
+            });
+        });
+    </script>
+</body>
+
+</html>
